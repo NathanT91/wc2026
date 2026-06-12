@@ -23,10 +23,10 @@ git push -u origin main
 5. Root directory: leave as `/`
 6. Click **Deploy** (it will fail on first deploy because env vars aren't set yet — that's fine)
 
-### 3. Add Vercel KV (score storage)
-1. In your Vercel project dashboard go to **Storage → Create → KV**
-2. Name it `wc2026-kv`, click Create
-3. Vercel automatically adds `KV_URL`, `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN` to your environment variables
+### 3. Add Upstash Redis (score storage)
+1. In your Vercel project dashboard go to **Storage → Upstash → Create**
+2. Choose **Redis**, name it `wc2026-redis`, click Create
+3. Vercel automatically adds `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` to your environment variables — `Redis.fromEnv()` picks these up automatically
 
 ### 4. Add environment variables
 In your Vercel project go to **Settings → Environment Variables** and add:

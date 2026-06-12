@@ -4,6 +4,6 @@
   "description": "World Cup 2026 Mini-Game Dashboard",
   "private": true,
   "dependencies": {
-    "@vercel/kv": "^1.0.0"
+    "@upstash/redis": "^1.34.0"
   }
 }

@@ -3,7 +3,8 @@
 // Checks whether any HT or FT trigger is due and processes it entirely
 // server-side — the API key and score writes never touch the browser.
 
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+const kv = Redis.fromEnv();
 const { PLAYERS, FIXTURES, apiTeamName, calcTeamPts, calcStarPts, getTriggers } = require('./_data');
 
 const SCORES_KEY = 'wc2026:scores';

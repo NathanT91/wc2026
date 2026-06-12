@@ -3,7 +3,8 @@
 // Called from the admin setup page with the x-admin-key header.
 // Never exposed in the browser dashboard.
 
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+const kv = Redis.fromEnv();
 const { PLAYERS } = require('./_data');
 
 const META_KEY = 'wc2026:meta';

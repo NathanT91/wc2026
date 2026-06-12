@@ -1,4 +1,5 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
+const kv = Redis.fromEnv();
 const { PLAYERS, calcTeamPts, calcStarPts, calcTotal } = require('./_data');
 
 const SCORES_KEY = 'wc2026:scores';
